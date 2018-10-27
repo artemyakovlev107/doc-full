@@ -143,6 +143,7 @@ class ReportController extends Controller
                     //read financial statement sheet
                     $tmpfname = public_path(Constants::REPORT_UPLOAD_URL) . $financialName;
                     $file = fopen(public_path(Constants::REPORT_UPLOAD_URL) . $financialName, "r");
+                    PHPExcel_Settings::setZipClass(PHPExcel_Settings::PCLZIP);
                     $excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
                     $excelObj = $excelReader->load($tmpfname);
 
