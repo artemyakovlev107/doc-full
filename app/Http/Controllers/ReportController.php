@@ -26,13 +26,13 @@ class ReportController extends Controller
         $responseData = new Response();
         $user = $_SESSION[Constants::SESSION_KEY_USER];
         $input = $request->all();
-        // $validator = Validator::make($input, [
-        //     'financial' => 'required',
-        // ]);
-        // if ($validator->fails()) {
-        //     $responseData->Status = Constants::RESPONSE_STATUS_ERROR;
-        //     $responseData->Message = $validator->errors()->first();
-        // } else {
+        $validator = Validator::make($input, [
+            'financial' => 'required',
+        ]);
+        if ($validator->fails()) {
+            $responseData->Status = Constants::RESPONSE_STATUS_ERROR;
+            $responseData->Message = $validator->errors()->first();
+        } else {
             $emrUrl = '';
             if (!empty($input['emr'])) {
                 if ($input['emr']->getClientOriginalName()) {
@@ -129,7 +129,7 @@ class ReportController extends Controller
                     }
                 }
             }
-            else if ($input['financial']->getClientOriginalName()) {
+            if ($input['financial']->getClientOriginalName()) {
                 $financialExtension = $input['financial']->getClientOriginalExtension();
                 if ($financialExtension != 'csv' && $financialExtension != 'xls' && $financialExtension != 'xlsx') {
                     $responseData->Status = Constants::RESPONSE_STATUS_ERROR;
@@ -312,7 +312,7 @@ class ReportController extends Controller
                 }
             }
             return json_encode($responseData);
-        // }
+        }
     }
 
     public function UploadSpecificFile(Request $request)
