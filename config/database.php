@@ -58,7 +58,7 @@ return [
             'port' => '3306',
             'database' => 'docandi',
             'username' => 'root',
-            'password' => '',
+            'password' => '123',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
