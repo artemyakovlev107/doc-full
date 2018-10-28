@@ -35,8 +35,8 @@ class Constants
   const USER = 0;
   const DEFAULT_AVATAR = 29;
   const DEFAULT_BACKGROUND = 58;
-  const WEB_LINK = 'http://docandi.qa.pgtest.co:2016/';
-  const API_URL = 'http://docandi2.qa.pgtest.co:2016/';
+  const WEB_LINK = 'http://ec2-54-193-46-165.us-west-1.compute.amazonaws.com/';
+  const API_URL = 'http://ec2-54-193-46-165.us-west-1.compute.amazonaws.com/';
     const OVERVIEW_VIDEO_URL = Constants::API_URL.'videos/DocandI.mp4';
   const LOGIN_PAGE_LINK = Constants::WEB_LINK.'login?email=';
   const DESTINATION_LINK = Constants::WEB_LINK.'ResetPassword?token=';
