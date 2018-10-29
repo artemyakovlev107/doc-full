@@ -190,6 +190,8 @@ Route::post('faq/update','FAQController@UpdateFAQ');
 
 Route::get('faq/delete','FAQController@DeleteFAQ');
 
+Route::post('athena/','AthenaController@GetData');
+
 Route::group(['middleware' => ['reportmanager']],function() {
 
     Route::post('hcf/uploadreport','HcfController@UploadReport');
@@ -197,7 +199,6 @@ Route::group(['middleware' => ['reportmanager']],function() {
     Route::get('hcf/uploadhistory','HcfController@GetReportUploadHistory');
 
     Route::get('report/prescriberdata','ReportController@GetProviderData');
-
 
     Route::get('report/uploadhistory','ReportController@GetUploadHistory');
 
